@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet } from 'react-native';
 
-import { Container,  Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 import Comments from './Comments';
 export interface Props {
     Name: string;
@@ -12,7 +12,7 @@ export interface Props {
     TotalComments: number;
     AllComments: Array<string>;
     AllLikes: Array<string>;
-    Time:Date;
+    Time: Date;
 
 
 
@@ -29,14 +29,16 @@ export default class CardImageExample extends Component<Props, State> {
     }
     showComments() {
         this.setState({
-            display:"block"
+            display: "block"
         })
     }
 
     render() {
+        console.log(this.props)
         return (
+
             <Container>
-            
+
                 <Content>
                     <Card>
                         <CardItem>
@@ -63,13 +65,13 @@ export default class CardImageExample extends Component<Props, State> {
                                     <Icon active name="chatbubbles" />
                                     <Text>{this.props.TotalComments} Comments</Text>
                                 </Button>
-                                
-                                <Comments styles={Styles.HideDisplay}  UserTime={new Date()} UserComment="Hello From The Other Side" UserIcon="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552" UserName="Jerry Satpathy" />
+
+                                <Comments styles={Styles.HideDisplay} UserTime={new Date()} UserComment="Hello From The Other Side" UserIcon="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552" UserName="Jerry Satpathy" />
 
 
                             </Body>
                             <Right>
-                                <Text>{this.props.Time} ago</Text>
+                                <Text>23hr ago</Text>
                             </Right>
                         </CardItem>
                     </Card>
@@ -81,5 +83,5 @@ export default class CardImageExample extends Component<Props, State> {
 const Styles = StyleSheet.create({
     HideDisplay: {
         display: 'none',
-    } 
+    }
 })

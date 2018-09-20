@@ -10,7 +10,8 @@ export interface Props{
     UserComment:string;
     styles:ViewStyle;
 }
-const ListOfComments:React.SFC<Props>=(props)=>{
+const ListOfComments:React.SFC<Props>=(props:Props)=>{
+console.log(props.UserTime)
 return(
     <List style={props.styles}>
     <ListItem avatar={true}>
@@ -22,7 +23,7 @@ return(
         <Text note={true}>{props.UserComment}</Text>
       </Body>
       <Right>
-        <Text note={true}>{props.UserTime}</Text>
+        <Text note={true}>23 hours</Text>
       </Right>
     </ListItem>
   </List>

@@ -14,9 +14,7 @@ export default class App extends React.Component {
       <Container>
         <Header/>
         <Content>
-          <Text>
-            Hellp
-          </Text>
+    
         <Card
         ThumbURL="https://www.blackfootfamilydentistry.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png"
         Like={21}
