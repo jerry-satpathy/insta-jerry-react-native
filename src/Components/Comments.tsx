@@ -1,19 +1,25 @@
 import React from 'react';
 
 import {List,ListItem,Thumbnail,Left,Text,Right,Body} from 'native-base'
-import { ViewStyle } from 'react-native';
+import { StyleSheet } from 'react-native';
+
 
 export interface Props{
     UserTime:Date
     UserName:string;
     UserIcon:string;
     UserComment:string;
-    styles:ViewStyle;
+    styles:any;
 }
 const ListOfComments:React.SFC<Props>=(props:Props)=>{
-console.log(props.UserTime)
+let styleSheet=StyleSheet.create({
+  HideDisplay:{
+    display: props.styles,
+  }
+
+})
 return(
-    <List style={props.styles}>
+    <List style={styleSheet.HideDisplay}>
     <ListItem avatar={true}>
       <Left>
         <Thumbnail source={{ uri: props.UserIcon }} />

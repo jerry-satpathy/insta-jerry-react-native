@@ -19,21 +19,24 @@ export interface Props {
 }
 interface State {
     display: string
+
 }
+
 export default class CardImageExample extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            display: "none"
+            display: 'none'
         }
+        this.showComments = this.showComments.bind(this)
     }
     showComments() {
-        this.setState({
-            display: "block"
-        })
+        this.state.display === "none" ? this.setState({ display: "flex" }) : this.setState({ display: "none" });
     }
 
     render() {
+
+
         console.log(this.props)
         return (
 
@@ -66,7 +69,7 @@ export default class CardImageExample extends Component<Props, State> {
                                     <Text>{this.props.TotalComments} Comments</Text>
                                 </Button>
 
-                                <Comments styles={Styles.HideDisplay} UserTime={new Date()} UserComment="Hello From The Other Side" UserIcon="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552" UserName="Jerry Satpathy" />
+                                <Comments styles={this.state.display} UserTime={new Date()} UserComment="Hello From The Other Side" UserIcon="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552" UserName="Jerry Satpathy" />
 
 
                             </Body>
@@ -79,9 +82,5 @@ export default class CardImageExample extends Component<Props, State> {
             </Container>
         );
     }
+ 
 }
-const Styles = StyleSheet.create({
-    HideDisplay: {
-        display: 'none',
-    }
-})
