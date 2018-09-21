@@ -3,6 +3,8 @@ import { Image } from 'react-native';
 
 import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 import Comments from './Comments';
+import Stories from './Stories';
+
 export interface Props {
     Name: string;
     Location: string;
@@ -31,7 +33,7 @@ export default class CardImageExample extends Component<Props, State> {
         this.showComments = this.showComments.bind(this)
     }
     showComments() {
-        
+
         this.state.display === "none" ? this.setState({ display: "flex" }) : this.setState({ display: "none" });
     }
 
@@ -44,6 +46,35 @@ export default class CardImageExample extends Component<Props, State> {
             <Container>
 
                 <Content>
+                    <Stories stories={[{
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }]} />
                     <Card>
                         <CardItem>
                             <Left>
@@ -55,7 +86,7 @@ export default class CardImageExample extends Component<Props, State> {
                             </Left>
                         </CardItem>
                         <CardItem cardBody>
-                            <Image source={{ uri: this.props.ImageURL }} />
+                            <Image source={{ uri: this.props.ThumbURL }} />
                         </CardItem>
                         <CardItem>
                             <Left>
@@ -83,5 +114,5 @@ export default class CardImageExample extends Component<Props, State> {
             </Container>
         );
     }
- 
+
 }

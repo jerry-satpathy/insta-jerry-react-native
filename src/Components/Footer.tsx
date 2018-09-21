@@ -5,16 +5,25 @@ import { CameraRoll } from 'react-native';
 export interface Props{
   callBackForHomeButton:()=>void;
   callBackForProfileButton:()=>void;
-  name:string
+  activeButton:string
 
 }
-export default class FooterTabsIconExample extends Component<Props>{
-
-openCamera(){
+interface State{
+  activeButton:string
+}
+export default class FooterTabsIconExample extends Component<Props,State>{
+constructor(props:any){
+super(props);
+this.state={
+  activeButton:this.props.activeButton
+}
+}
+openGallery(){
  
   CameraRoll.getPhotos({
     first:100,
     groupTypes:"All",
+
 
 }).then(r=>{
     console.log(r.edges)
@@ -22,7 +31,9 @@ openCamera(){
     console.log(err)
 })
 }
+changeActiveButton(){
 
+}
   render() {
 
     return (
@@ -30,27 +41,26 @@ openCamera(){
    
         <Footer>
           <FooterTab>
-            <Button onPress={this.props.callBackForHomeButton}>
-              <Icon name="apps" />
+            <Button  active={true} ref="Home"  onPress={this.props.callBackForHomeButton}>
+              <Icon name="home" />
             </Button>
-            <Button onPress={this.openCamera}>
+            <Button active={false} ref="Camera" onPress={this.openGallery}>
               <Icon name="camera" />
             </Button>
-            <Button active>
-              <Icon active name="navigate" />
+            <Button ref="AddPhotos" >
+              <Icon active={false} name="add"/>
+              </Button>
+            <Button ref="search">
+              <Icon active={false} name="search" />
             </Button>
-            <Button onPress={this.props.callBackForProfileButton}>
-              <Icon name="person" />
+            <Button ref="profile"  onPress={this.props.callBackForProfileButton}>
+              <Icon active={false} name="person" />
             </Button>
           </FooterTab>
         </Footer>
       </Container>
     );
   }
-  componentWillMount(){
-    console.log(this.props)
-  }
-  componentWillReceiveProps(state:any,props:any){
-    console.log(state,props)
-  }
+
+
 }

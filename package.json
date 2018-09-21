@@ -38,6 +38,7 @@
     "@expo/vector-icons": "^6.3.1",
     "@types/expo": "^27.0.9",
     "@types/jest": "^23.3.2",
+    "@types/react-native-snap-carousel": "^3.7.1",
     "@types/react-test-renderer": "^16.0.2",
     "concurrently": "^4.0.1",
     "expo": "^27.0.1",

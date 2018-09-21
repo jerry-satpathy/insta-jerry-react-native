@@ -16,6 +16,7 @@ const Profile: React.SFC<ProfileProps> = (props: ProfileProps) => {
     const Images=   props.ImagesForProfile.map((ele,ind)=>{
         return <Image key={ind} source={{uri:ele}}/>
     })
+    console.log(Images)
     return (
         <Container>
             <Grid>
@@ -30,7 +31,10 @@ const Profile: React.SFC<ProfileProps> = (props: ProfileProps) => {
                         </Text>
                     </Col>
                     <Col>
-                        <Text>{props.ImagesForProfile.length}</Text>
+                 
+                    <Text>{props.ImagesForProfile.length}</Text>
+                   
+                    
                         <Text>{props.Followers}</Text>
                         <Text>{props.Following}</Text>
                     </Col>
