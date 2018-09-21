@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { Image } from 'react-native';
 
 import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 import Comments from './Comments';

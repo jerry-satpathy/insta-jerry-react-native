@@ -1,18 +1,22 @@
 import React from 'react';
 import Card from './Components/Contaier';
 import FooterWithButton from './Components/Footer'
-import { Container,Header,Content,Footer,Text } from 'native-base';
+import { Container,Header,Content,Footer } from 'native-base';
 
-
+import AppHeader from './Components/Header'
 export default class App extends React.Component {
 
-
+callBackForHeader(e:any){
+  console.log(e)
+}
 
   render() {
     
     return (
       <Container>
-        <Header/>
+        <Header>
+          <AppHeader callback={this.callBackForHeader}/>
+        </Header>
         <Content>
     
         <Card

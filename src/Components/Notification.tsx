@@ -1,24 +1,39 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { ListItem,Button,Left,Right,Body } from 'native-base';
+import React from 'react';
+import { Container, Header, Content, List, ListItem, Left, Body, Right, Thumbnail, Text } from 'native-base';
 
-export default Notification extends Component{
-    render(){
-        return(
-            <ListItem icon>
-            <Left>
-              <Button style={{ backgroundColor: "#FF9501" }}>
-                <Icon active name="plane" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Airplane Mode</Text>
-            </Body>
-            <Right>
-              <Switch value={false} />
-            </Right>
-          </ListItem>
+interface Props{
+UserName:Array<string>;
+UserAvatar:Array<string>;
+NotificationTime:Array<string>;
+Notification:Array<string>;
 
-        )
-    }
 }
+const Notification:React.SFC<Props>=(props:Props)=> {
+  {props.UserName.forEach(ele=>{
+           console.log(ele)       
+  })}
+    return (
+      <Container>
+        <Header />
+        <Content>
+          <List>
+            <ListItem avatar>
+              <Left>
+                <Thumbnail source={{ uri: 'Image URL' }} />
+              </Left>
+              <Body>
+                <Text>Kumar Pratik</Text>
+                <Text note>Doing what you like will always keep you happy . .</Text>
+              </Body>
+              <Right>
+                
+                <Text note>3:43 pm</Text>
+              </Right>
+            </ListItem>
+          </List>
+        </Content>
+      </Container>
+    );
+  
+}
+export default Notification;
