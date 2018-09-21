@@ -13,12 +13,15 @@ interface ProfileProps {
 
 }
 const Profile: React.SFC<ProfileProps> = (props: ProfileProps) => {
+    const Images=   props.ImagesForProfile.map((ele,ind)=>{
+        return <Image key={ind} source={{uri:ele}}/>
+    })
     return (
         <Container>
             <Grid>
                 <Row>
                     <Col>
-                        <Thumbnail source={{ uri: "image url" }} />
+                        <Thumbnail source={{ uri: props.ImageUrl }} />
                         <Text>
                             {props.ProfileName}
                         </Text>
@@ -27,15 +30,13 @@ const Profile: React.SFC<ProfileProps> = (props: ProfileProps) => {
                         </Text>
                     </Col>
                     <Col>
-                        <Text>{props.NumberOfPosts}</Text>
+                        <Text>{props.ImagesForProfile.length}</Text>
                         <Text>{props.Followers}</Text>
                         <Text>{props.Following}</Text>
                     </Col>
                 </Row>
                 <Row>
-                    {props.ImagesForProfile.map(ele=>{
-                        return <Image source={{uri:ele}}/>
-                    })}
+                 {Images}
                 </Row>
             </Grid>
         </Container>

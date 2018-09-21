@@ -31,6 +31,7 @@ export default class CardImageExample extends Component<Props, State> {
         this.showComments = this.showComments.bind(this)
     }
     showComments() {
+        
         this.state.display === "none" ? this.setState({ display: "flex" }) : this.setState({ display: "none" });
     }
 
