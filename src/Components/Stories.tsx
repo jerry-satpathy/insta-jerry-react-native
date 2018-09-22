@@ -1,7 +1,7 @@
 import React from 'react';
 import { Thumbnail, Row, Grid, Col, Button } from 'native-base';
 import { StyleSheet } from 'react-native';
-import Carousel from 'react-native-carousel';
+
 interface ObjectType {
     image: string,
     restImages: Array<string>
@@ -12,8 +12,7 @@ interface SearchBarProps {
 
 }
 const StoryViewer = (e:any) => {
-    console.log(e)
- console.log("Pressed")
+ console.log(e,"Pressed")
 }
 const Stories: React.SFC<SearchBarProps> = (props: SearchBarProps) => {
 const styles=StyleSheet.create({
@@ -41,10 +40,7 @@ const styles=StyleSheet.create({
     return (
         <Grid>
             <Row>
-                <Carousel hideIndicators={false}>
                 {storyThumb}
-                </Carousel>
-         
             </Row>
         </Grid>
 

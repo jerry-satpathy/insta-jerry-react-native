@@ -1,0 +1,29 @@
+     <Stories stories={[{
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }, {
+                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
+                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
+
+                    }]} />

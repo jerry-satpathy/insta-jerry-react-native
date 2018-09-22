@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
-export default interface SearchProps {
-    term: string
+import { Container, Header, Content, List, ListItem, Thumbnail,Item,Icon,Input, Text, Left, Body, Right, Button } from 'native-base';
 
-}
 interface Serachstate {
     term: string;
     results: Array<Object>
 }
-export default class SearchBar extends Component<SearchProps, Serachstate>{
-    constructor(props: SearchProps) {
+export default class SearchBar extends Component<{}, Serachstate>{
+    constructor(props:null) {
         super(props);
         this.state = {
             term: "",
         results:[],
         }
     }
+    searchTermChange(e:any){
+      console.log(e)
+      this.setState({
+        term:e.target.value
+      })
+    }
     render(){
         return(
             <Container>
-            <Header />
+               <Header searchBar rounded>
+          <Item>
+            <Icon name="ios-search" />
+            <Input placeholder="Search" onChange={e=>this.searchTermChange(e)} />
+            <Icon name="ios-people" />
+          </Item>
+          <Button transparent>
+            <Text>Search</Text>
+          </Button>
+        </Header>
             <Content>
               <List>
                 <ListItem thumbnail>
