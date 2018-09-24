@@ -1,11 +1,11 @@
 import React from 'react';
-import Card from './Components/Contaier';
+import Card from './Components/NewsFeed';
 import FooterWithButton from './Components/Footer'
 import { Container, Content, Footer, Header } from 'native-base';
 import Profile from './Components/profile';
 import AppHeader from './Components/Header';
 import Search from './Components/Search';
-import Like from './Components/Likes';
+
 import DummyData from './Components/DummyData.json';
 interface state {
   WhichComponent: string;

@@ -6,6 +6,7 @@ import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left
 import Likes from './Likes';
 
 import Stories from './Stories';
+import { PropsOfObj } from './Likes';
 
 
 
@@ -42,8 +43,9 @@ interface ObjProps {
 
 
 interface State {
-    display: string
-
+    display: string;
+    showLikes: boolean;
+    showComments: boolean
 }
 let { width, height }: ScaledSize = Dimensions.get('window');
 const Styles = StyleSheet.create({
@@ -61,100 +63,115 @@ export default class CardImageExample extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            display: 'none'
+            display: 'none',
+            showComments: false,
+            showLikes: false
         }
+        this.showLikes = this.showLikes.bind(this)
         this.showComments = this.showComments.bind(this)
     }
     showComments() {
 
         this.state.display === "none" ? this.setState({ display: "flex" }) : this.setState({ display: "none" });
     }
-
+    showLikes(bool: boolean) {
+        this.setState({ showLikes: bool })
+    }
 
     render() {
 
         let newsFeed = this.props.data.map((ele, ind) => {
-            console.log(ele.ThumbURL)
-            return (
-                <Card key={ind}>
-                    <CardItem header={true} bordered={true}>
-                        <Left>
-                            <Thumbnail source={{ uri: ele.ThumbURL }} />
+            if (this.state.showLikes === false && this.state.showComments === false) {
+                return (
+                    <Card key={ind}>
+                        <CardItem header={true} bordered={true}>
+                            <Left>
+                                <Thumbnail source={{ uri: ele.ThumbURL }} />
+                                <Body>
+                                    <Text>{ele.Name}</Text>
+                                    <Text note>{ele.Location}</Text>
+                                </Body>
+                            </Left>
+                        </CardItem>
+                        <CardItem cardBody={true} bordered={true}>
+                            <Image resizeMode="cover" source={{ uri: ele.PictureForFeed, width: width, height: height / 3.5 }} />
+                        </CardItem>
+                        <CardItem footer={true} bordered={true}>
+                            <Left>
+                                <Button transparent>
+                                    <Icon active name="favorite-border" type="MaterialIcons" style={Styles.iconSize} />
+
+                                </Button>
+                                <Button transparent onPress={this.showComments}>
+                                    <Icon active type="MaterialIcons" name="chat-bubble-outline" style={Styles.iconSize} />
+
+                                </Button>
+
+                                <Button transparent onPress={this.showComments}>
+                                    <Icon type="MaterialIcons" active name="share" style={Styles.iconSize} />
+
+                                </Button>
+                            </Left>
+
+
                             <Body>
-                                <Text>{ele.Name}</Text>
-                                <Text note>{ele.Location}</Text>
+
+
+
+
+
                             </Body>
-                        </Left>
-                    </CardItem>
-                    <CardItem cardBody={true} bordered={true}>
-                        <Image resizeMode="cover" source={{ uri: ele.PictureForFeed, width: width, height: height / 3.5 }} />
-                    </CardItem>
-                    <CardItem footer={true} bordered={true}>
-                        <Left>
-                            <Button transparent>
-                                <Icon active name="favorite-border" type="MaterialIcons" style={Styles.iconSize} />
+                            <Right>
 
-                            </Button>
-                            <Button transparent onPress={this.showComments}>
-                                <Icon active type="MaterialIcons" name="chat-bubble-outline" style={Styles.iconSize} />
-
-                            </Button>
-
-                            <Button transparent onPress={this.showComments}>
-                                <Icon type="MaterialIcons" active name="share" style={Styles.iconSize} />
-
-                            </Button>
-                        </Left>
+                            </Right>
 
 
-                        <Body>
+                        </CardItem>
+                        <CardItem bordered={true}>
 
 
 
 
-
-                        </Body>
-                        <Right>
-
-                        </Right>
+                            <Likes data={ele.AllLikes} callBack={this.showLikes} showLike={false} />
 
 
-                    </CardItem>
-                    <CardItem bordered={true}>
-                     
-                           
 
-                  
-                                    <Likes data={ele.AllLikes} showLike={false} />
-                             
-                           
-                     
 
-                    </CardItem>
+                        </CardItem>
 
-                    <CardItem bordered={true}>
-                        <Left>
+                        <CardItem bordered={true}>
+                            <Left>
+                                <Text>
+                                    {ele.Name}
+                                </Text>
+                                <Text>
+                                    {ele.FeedDesc}
+                                </Text>
+                            </Left>
+
+                        </CardItem>
+                        <CardItem>
                             <Text>
-                                {ele.Name}
+                                View All {ele.TotalComments} Comments
                             </Text>
-                            <Text>
-                                {ele.FeedDesc}
-                            </Text>
-                        </Left>
+                        </CardItem>
+                        <CardItem bordered={true}>
+                            <Text>{ele.Time} hours ago</Text>
+                        </CardItem>
+                    </Card>
 
-                    </CardItem>
-                    <CardItem>
-                        <Text>
-                            View All {ele.TotalComments} Comments
-                        </Text>
-                    </CardItem>
-                    <CardItem bordered={true}>
-                        <Text>{ele.Time} hours ago</Text>
-                    </CardItem>
-                </Card>
-            )
-        }
-        )
+
+                )
+            }
+            else if (this.state.showLikes === true && this.state.showComments === false) {
+                return (
+
+                    <Likes key={ind} data={ele.AllLikes} callBack={this.showLikes} showLike={this.state.showLikes} />
+
+                )
+            }
+        })
+
 
         return (
 
@@ -197,6 +214,9 @@ export default class CardImageExample extends Component<Props, State> {
                 </Content>
             </Container>
         );
+
+
+
     }
 
 }

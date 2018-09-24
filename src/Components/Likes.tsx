@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Header, Content, Button, Icon, List, ListItem, Left, Body, Text, Thumbnail } from 'native-base';
 
-interface PropsOfObj {
+export interface PropsOfObj {
     ProfileName: string;
     ProfilePic: string;
 
@@ -11,21 +11,23 @@ interface State {
 }
 export interface LikeProps {
     data: Array<PropsOfObj>;
-    showLike: boolean
+    showLike: boolean;
+    callBack: () => void
 }
 class LikesCount extends React.Component<LikeProps, State>{
     constructor(props: LikeProps) {
         super(props);
         this.state = {
-            ShowLike: false
+            ShowLike: this.props.showLike
         }
         this.ShowLikes = this.ShowLikes.bind(this)
     }
     ShowLikes() {
         this.setState({ ShowLike: true })
-
+        this.props.callBack(true)
     }
     render() {
+
 
         if (this.props.data.length > 1 && this.state.ShowLike === false) {
             return (
@@ -68,11 +70,15 @@ class LikesCount extends React.Component<LikeProps, State>{
                     </ListItem>
                 )
             })
+          
+           this.props.data.forEach(ele=>{
+                console.log("These are the element "+ele.ProfilePic,ele.ProfileName)
+            })
             return (
                 <Container>
                     <Header>
                         <Left>
-                            <Button transparent onPress={() => this.setState({ ShowLike: false })}>
+                            <Button transparent onPress={() => this.props.callBack(false)}>
                                 <Icon name='arrow-back' />
                             </Button>
                         </Left>
@@ -93,6 +99,9 @@ class LikesCount extends React.Component<LikeProps, State>{
         }
 
 
+    }
+    componentDidUpdate() {
+        console.log(this.state.ShowLike)
     }
 }
 
