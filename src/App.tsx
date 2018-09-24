@@ -34,9 +34,7 @@ export default class App extends React.Component<{}, state>{
   callBackForFooterProfileButton() {
 
     this.setState({ WhichComponent: "person" });
-    componentToRender = <Profile ProfileName="Jerry Satpathy" ProfileDesc="I am an Inception" ImageUrl="https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"
-      NumberOfPosts={201} Followers={100} Following={302} ImagesForProfile={["https://vignette.wikia.nocookie.net/the-darkest-minds/images/4/47/Placeholder.png/revision/latest?cb=20160927044640", "https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif", "https://cdn.tutsplus.com/net/uploads/legacy/958_placeholders/placehold.gif"]}
-    />
+    componentToRender = <Profile data={DummyData.profileData}/>
 
   }
   callBackForFooterSearchButton() {

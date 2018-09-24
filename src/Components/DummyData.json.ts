@@ -111,5 +111,22 @@ export default {
         "Time": 23,
         "date": "September 21,2018"
 
-    }]
+    }],
+    "profileData": {
+        "PhotosOfTheProfile": [
+            "https://cdn.paolacasoli.com/wp-content/uploads/2010/09/dummies_man.gif",
+            "http://www.islamedianalysis.info/wp-content/uploads/2016/03/2016_03_03-TerrorismForDummies-Header2970745526.png",
+
+            "https://cdn.paolacasoli.com/wp-content/uploads/2010/09/dummies_man.gif",
+            "http://www.islamedianalysis.info/wp-content/uploads/2016/03/2016_03_03-TerrorismForDummies-Header2970745526.png",
+
+            "https://cdn.paolacasoli.com/wp-content/uploads/2010/09/dummies_man.gif",
+        ],
+        "Name": "Jerry Satpathy",
+        "ProfileDescription": "I am an Incepiton",
+        "ProfilePicture":"https://cdn.paolacasoli.com/wp-content/uploads/2010/09/dummies_man.gif",
+        "Followers":21,
+        "Following":40,
+        "ProfileLinkDescription":"jerrysatpathy.in"
+    }
 }
