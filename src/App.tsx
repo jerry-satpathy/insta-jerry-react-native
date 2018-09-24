@@ -7,6 +7,7 @@ import AppHeader from './Components/Header';
 import Search from './Components/Search';
 
 import DummyData from './Components/DummyData.json';
+import Notification from './Components/Notification';
 interface state {
   WhichComponent: string;
 }
@@ -49,6 +50,12 @@ export default class App extends React.Component<{}, state>{
     })
   
   }
+  callBackForFooterNottificationButton(){
+    this.setState({
+      WhichComponent:"notification"
+    })
+    componentToRender=<Notification data={DummyData.Notifiaction}/>
+  }
 
   callBackForFooterHomeButton() {
 
@@ -61,7 +68,7 @@ export default class App extends React.Component<{}, state>{
 
   render() {
     //Check For Unused Props and remove it
-    console.log(componentToRender)
+   // console.log(componentToRender)
     return (
       <Container>
         <Header>
@@ -84,6 +91,6 @@ export default class App extends React.Component<{}, state>{
 
   componentWillUpdate() {
     //console.log(this.state.WhichComponent)
-    console.log(componentToRender);
+   // console.log(componentToRender);
   }
 }

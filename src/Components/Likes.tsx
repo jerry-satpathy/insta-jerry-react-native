@@ -12,7 +12,7 @@ interface State {
 export interface LikeProps {
     data: Array<PropsOfObj>;
     showLike: boolean;
-    callBack: () => void
+    callBack: (bool:boolean) => void
 }
 class LikesCount extends React.Component<LikeProps, State>{
     constructor(props: LikeProps) {
@@ -100,9 +100,7 @@ class LikesCount extends React.Component<LikeProps, State>{
 
 
     }
-    componentDidUpdate() {
-        console.log(this.state.ShowLike)
-    }
+ 
 }
 
 

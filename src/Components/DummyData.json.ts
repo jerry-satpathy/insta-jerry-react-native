@@ -1,11 +1,11 @@
 export default {
     "CardData": [
         {
-            "Name":"Jerry Satpathy",
+            "Name": "Jerry Satpathy",
             "ThumbURL": "https://www.blackfootfamilydentistry.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
             "Like": 2,
             "TotalComments": 2,
-            "FeedDesc":"My New Bike",
+            "FeedDesc": "My New Bike",
             "AllComments": [
                 {
                     "Comment": "Wassup Bro",
@@ -35,11 +35,11 @@ export default {
             "PictureForFeed": "https://s3-ap-south-1.amazonaws.com/blogmindler/bloglive/wp-content/uploads/2017/11/06144017/Dummy-School-Advantages-Disadvantages.png"
         },
         {
-            "Name":"Jerry Satpathy",
+            "Name": "Jerry Satpathy",
             "ThumbURL": "https://www.blackfootfamilydentistry.com/wp-content/uploads/2016/10/orionthemes-placeholder-image.png",
             "Like": 2,
             "TotalComments": 2,
-            "FeedDesc":"My New Car",
+            "FeedDesc": "My New Car",
             "AllComments": [
                 {
                     "Comment": "Wassup Bro",
@@ -68,5 +68,11 @@ export default {
             "Location": "Cuttack",
             "PictureForFeed": "https://s3-ap-south-1.amazonaws.com/blogmindler/bloglive/wp-content/uploads/2017/11/06144017/Dummy-School-Advantages-Disadvantages.png"
         }
-    ]
+    ],
+    "Notifiaction": [{
+        "NotificationREgarding": "",
+        "NotificationText": "",
+        "Picture": "",
+        "Time": ""
+    }]
 }

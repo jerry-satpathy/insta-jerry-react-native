@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Image, Dimensions, ScaledSize, StyleSheet } from 'react-native';
 
 import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
-//import Comments from './Comments';
+import Comments from './Comments';
 import Likes from './Likes';
 
 import Stories from './Stories';
-import { PropsOfObj } from './Likes';
+import { NONAME } from 'dns';
+
 
 
 
@@ -63,16 +64,17 @@ export default class CardImageExample extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            display: 'none',
+            display: 'flex',
             showComments: false,
             showLikes: false
         }
         this.showLikes = this.showLikes.bind(this)
         this.showComments = this.showComments.bind(this)
     }
-    showComments() {
+    showComments(bool: boolean) {
 
-        this.state.display === "none" ? this.setState({ display: "flex" }) : this.setState({ display: "none" });
+        this.setState({ showComments: bool })
+
     }
     showLikes(bool: boolean) {
         this.setState({ showLikes: bool })
@@ -130,9 +132,11 @@ export default class CardImageExample extends Component<Props, State> {
                         <CardItem bordered={true}>
 
 
+                            <Left>
+                                <Likes data={ele.AllLikes} callBack={this.showLikes} showLike={false} />
+                            </Left>
 
 
-                            <Likes data={ele.AllLikes} callBack={this.showLikes} showLike={false} />
 
 
 
@@ -152,7 +156,8 @@ export default class CardImageExample extends Component<Props, State> {
                         </CardItem>
                         <CardItem>
                             <Text>
-                                View All {ele.TotalComments} Comments
+                                <Comments showComments={this.state.showComments} callBack={this.showComments} data={ele.AllComments} />
+
                             </Text>
                         </CardItem>
                         <CardItem bordered={true}>
@@ -164,10 +169,18 @@ export default class CardImageExample extends Component<Props, State> {
                 )
             }
             else if (this.state.showLikes === true && this.state.showComments === false) {
+
                 return (
 
                     <Likes key={ind} data={ele.AllLikes} callBack={this.showLikes} showLike={this.state.showLikes} />
 
+                )
+            }
+            else if (this.state.showLikes === false && this.state.showComments === true) {
+
+
+                return (
+                    <Comments showComments={this.state.showComments} callBack={this.showComments} data={ele.AllComments} />
                 )
             }
         })
