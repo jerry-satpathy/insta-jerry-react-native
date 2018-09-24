@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Image, Dimensions, ScaledSize, StyleSheet } from 'react-native';
 
 import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
-import Comments from './Comments';
+//import Comments from './Comments';
 import Likes from './Likes';
 
 import Stories from './Stories';
@@ -121,14 +121,17 @@ export default class CardImageExample extends Component<Props, State> {
 
                     </CardItem>
                     <CardItem bordered={true}>
-                        <Left>
+                     
+                           
 
-                            <Text style={Styles.padding}>
-                                {ele.Like} Likes
-                           </Text>
-                        </Left>
-                    </CardItem>
                   
+                                    <Likes data={ele.AllLikes} showLike={false} />
+                             
+                           
+                     
+
+                    </CardItem>
+
                     <CardItem bordered={true}>
                         <Left>
                             <Text>
@@ -138,7 +141,7 @@ export default class CardImageExample extends Component<Props, State> {
                                 {ele.FeedDesc}
                             </Text>
                         </Left>
-                       
+
                     </CardItem>
                     <CardItem>
                         <Text>

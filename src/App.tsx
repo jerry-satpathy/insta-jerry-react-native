@@ -5,7 +5,7 @@ import { Container, Content, Footer, Header } from 'native-base';
 import Profile from './Components/profile';
 import AppHeader from './Components/Header';
 import Search from './Components/Search';
-
+import Like from './Components/Likes';
 import DummyData from './Components/DummyData.json';
 interface state {
   WhichComponent: string;
@@ -21,6 +21,7 @@ export default class App extends React.Component<{}, state>{
       WhichComponent: 'home',
 
     }
+    this.callBackForLikeButton=this.callBackForLikeButton.bind(this);
     this.callBackForFooterHomeButton = this.callBackForFooterHomeButton.bind(this);
     this.callBackForFooterProfileButton = this.callBackForFooterProfileButton.bind(this);
     this.callBackForFooterSearchButton = this.callBackForFooterSearchButton.bind(this)
@@ -42,6 +43,12 @@ export default class App extends React.Component<{}, state>{
     })
     componentToRender = <Search />
   }
+  callBackForLikeButton(){
+    this.setState({
+      WhichComponent:"likes"
+    })
+  
+  }
 
   callBackForFooterHomeButton() {
 
@@ -51,6 +58,7 @@ export default class App extends React.Component<{}, state>{
       data={DummyData.CardData} />;
 
   }
+
   render() {
     //Check For Unused Props and remove it
     console.log(componentToRender)
