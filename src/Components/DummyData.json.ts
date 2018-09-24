@@ -69,10 +69,47 @@ export default {
             "PictureForFeed": "https://s3-ap-south-1.amazonaws.com/blogmindler/bloglive/wp-content/uploads/2017/11/06144017/Dummy-School-Advantages-Disadvantages.png"
         }
     ],
-    "Notifiaction": [{
-        "NotificationREgarding": "",
-        "NotificationText": "",
-        "Picture": "",
-        "Time": ""
+    "Notifiactions": [{
+        "NotificationId": 1,
+        "ArrayOfNotifications": [
+            {
+                "ProfileName": "Ram Nath",
+                "ProfilePicture": "https://risenwriters.com/wp-content/uploads/2016/08/generic-candy-RW-Blog.jpg"
+            },
+            {
+                "ProfileName": "Shyam Nath",
+                "ProfilePicture": "https://risenwriters.com/wp-content/uploads/2016/08/generic-candy-RW-Blog.jpg"
+            }
+
+        ],
+
+        "NotificationCategory": "Like",
+
+        "Picture": "https://dummyimage.com/600x400/000/fff",
+        "Time": 12,
+        "date": "September 24,2018"
+    },
+    {
+        "NotiicationId": 2,
+        "ArrayOfNotifications": [
+            {
+                "ProfileName": "Ram Nath",
+                "ProfilePicture": "https://risenwriters.com/wp-content/uploads/2016/08/generic-candy-RW-Blog.jpg",
+                "CommenText": "Nice Picture Bro"
+            },
+            {
+                "ProfileName": "Shyam Nath",
+                "ProfilePicture": "https://risenwriters.com/wp-content/uploads/2016/08/generic-candy-RW-Blog.jpg",
+                "CommentText": "Nice Picture Bro"
+            }
+
+        ],
+
+        "NotificationCategory": "Comment",
+
+        "Picture": "https://dummyimage.com/600x400/000/fff",
+        "Time": 23,
+        "date": "September 21,2018"
+
     }]
 }

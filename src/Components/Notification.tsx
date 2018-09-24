@@ -5,42 +5,154 @@ export interface Props {
   data: Array<PorpsOfObj>
 
 }
-interface PorpsOfObj {
-  Picture: string,
-
-  NotificationText: string,
-  NotificationRegarding: string,
-  NotificationDate: string
+interface ArrayOfNotifications {
+  ProfileName: string;
+  ProfilePicture: string;
+  CommentText?: string;
 }
-const Notification: React.SFC<Props> = (props: Props) => {
-  props.data.map(ele => {
+interface PorpsOfObj {
+  NotificationId: number;
+  ArrayOfNotifications: Array<ArrayOfNotifications>,
 
-  })
+  NotificationCategory: string,
+  Picture: string,
+  Time: number,
+  date: string,
+
+  NotificationRegarding: string,
+
+}
+//TODO Make the date renders properly and is not assigned what is returned from the server
+
+const Notification: React.SFC<Props> = (props: Props) => {
+
+
+  let itemsToRender = props.data.map((ele, ind) => {
+    console.log(ele.ArrayOfNotifications.length)
+    if (ele.NotificationCategory === "Comment" && ele.ArrayOfNotifications.length === 1) {
+
+      return (
+        <List key={ind}>
+          <ListItem itemDivider>
+            <Text>
+              {ele.date}
+            </Text>
+          </ListItem>
+
+          <ListItem>
+            <Left>
+              <Thumbnail source={{ uri: ele.ArrayOfNotifications[0].ProfilePicture }} />
+              <Text>
+                {ele.ArrayOfNotifications[0].ProfileName} commented  {ele.ArrayOfNotifications[0].CommentText} on your picture {ele.Time} minutes ago
+                </Text>
+            </Left>
+  
+            <Right>
+              <Thumbnail source={{ uri: ele.Picture }} square={true} />
+
+            </Right>
+          </ListItem>
+        </List>
+
+      )
+
+    }
+    //Edit the notificatin time according to time returned from server
+    else if (ele.NotificationCategory === "Comment" && ele.ArrayOfNotifications.length > 1) {
+      return (
+        <List key={ind}>
+          <ListItem itemDivider>
+            <Text>
+              {ele.date}
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Left>
+              <Thumbnail source={{ uri: ele.ArrayOfNotifications[0].ProfilePicture }} />
+              <Text>
+                {ele.ArrayOfNotifications[0].ProfileName} and {ele.ArrayOfNotifications.length === 2 ? ele.ArrayOfNotifications.length - 1 + "other" : ele.ArrayOfNotifications.length + "others"} commented on your picture {ele.Time} minutes ago
+            </Text>
+            </Left>
+
+            <Right>
+              <Thumbnail source={{ uri: ele.Picture }} square={true} />
+            </Right>
+          </ListItem>
+        </List>
+
+
+      )
+    }
+
+    else if (ele.NotificationCategory === "Like" && ele.ArrayOfNotifications.length === 1) {
+      return (
+        <List key={ind}>
+          <ListItem itemDivider>
+            <Text>
+              {ele.date}
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Left>
+              <Thumbnail source={{ uri: ele.ArrayOfNotifications[0].ProfilePicture }} />
+              <Text>
+                {ele.ArrayOfNotifications[0].ProfileName} liked your picture {ele.Time} hours ago
+            </Text>
+            </Left>
+
+            <Right>
+              <Thumbnail source={{ uri: ele.Picture }} square={true} />
+            </Right>
+          </ListItem>
+
+        </List>
+
+      )
+    }
+    else if (ele.NotificationCategory === "Like" && ele.ArrayOfNotifications.length > 1) {
+      return (
+        <List key={ind}>
+          <ListItem itemDivider>
+            <Text>
+              {ele.date}
+            </Text>
+          </ListItem>
+          <ListItem>
+            <Left>
+              <Thumbnail source={{ uri: ele.ArrayOfNotifications[0].ProfilePicture }} />
+              <Text>
+                {ele.ArrayOfNotifications[0].ProfileName} and {ele.ArrayOfNotifications.length === 2 ? ele.ArrayOfNotifications.length - 1 + "other" : ele.ArrayOfNotifications.length + "others"} liked your picture
+          </Text>
+            </Left>
+
+
+
+            <Right>
+              <Thumbnail source={{ uri: ele.Picture }} square={true} />
+            </Right>
+          </ListItem>
+        </List>
+
+      )
+    }
+    else {
+      return (
+        ""
+      )
+    }
+
+  }
+  )
+
   return (
     <Container>
       <Header>
         <Text>
-          Showing Notification For
+          Your Notifications
         </Text>
       </Header>
       <Content>
-        <List>
-          <ListItem itemDivider={true}>
-
-          </ListItem>
-          <ListItem>
-            <Left>
-              <Thumbnail source={{ uri: 'Image URL' }} />
-            </Left>
-            <Body>
-
-              <Text note>Doing what you like will always keep you happy . .</Text>
-            </Body>
-            <Right>
-              <Thumbnail source={{ uri: "" }} square />
-            </Right>
-          </ListItem>
-        </List>
+        {itemsToRender}
       </Content>
     </Container>
   );

@@ -25,7 +25,8 @@ export default class App extends React.Component<{}, state>{
     this.callBackForLikeButton=this.callBackForLikeButton.bind(this);
     this.callBackForFooterHomeButton = this.callBackForFooterHomeButton.bind(this);
     this.callBackForFooterProfileButton = this.callBackForFooterProfileButton.bind(this);
-    this.callBackForFooterSearchButton = this.callBackForFooterSearchButton.bind(this)
+    this.callBackForFooterSearchButton = this.callBackForFooterSearchButton.bind(this);
+    this.callBackForFooterNottificationButton=this.callBackForFooterNottificationButton.bind(this);
   }
   callBackForHeader(e: any) {
     console.log(e)
@@ -54,7 +55,7 @@ export default class App extends React.Component<{}, state>{
     this.setState({
       WhichComponent:"notification"
     })
-    componentToRender=<Notification data={DummyData.Notifiaction}/>
+    componentToRender=<Notification data={DummyData.Notifiactions}/>
   }
 
   callBackForFooterHomeButton() {
@@ -81,7 +82,7 @@ export default class App extends React.Component<{}, state>{
         </Content>
         <Footer>
 
-          <FooterWithButton callBackForHomeButton={this.callBackForFooterHomeButton} callBackForProfileButton={this.callBackForFooterProfileButton} callBackForSearchButton={this.callBackForFooterSearchButton} activeButton={this.state.WhichComponent} />
+          <FooterWithButton callBackForNotificationButton={this.callBackForFooterNottificationButton} callBackForHomeButton={this.callBackForFooterHomeButton} callBackForProfileButton={this.callBackForFooterProfileButton} callBackForSearchButton={this.callBackForFooterSearchButton} activeButton={this.state.WhichComponent} />
         </Footer>
       </Container>
 

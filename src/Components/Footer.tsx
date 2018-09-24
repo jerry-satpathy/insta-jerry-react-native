@@ -6,6 +6,8 @@ export interface Props {
   callBackForHomeButton: () => void;
   callBackForProfileButton: () => void;
   callBackForSearchButton: () => void;
+  callBackForNotificationButton: () => void;
+
   activeButton: string
 
 }
@@ -43,16 +45,16 @@ export default class FooterTabsIconExample extends Component<Props, State>{
         <Footer>
           <FooterTab>
             <Button active={true} ref="Home" onPress={this.props.callBackForHomeButton}>
-              <Icon name="home" />
+              <Icon name="home" type="MaterialIcons" />
             </Button>
             <Button ref="search">
-              <Icon active={false} name="search" onPress={this.props.callBackForSearchButton} />
+              <Icon active={false} type="MaterialIcons" name="search" onPress={this.props.callBackForSearchButton} />
             </Button>
             <Button active={false} ref="Camera" onPress={this.openGallery}>
-              <Icon name="add" />
+              <Icon name="add" type="MaterialIcons" />
             </Button>
-            <Button ref="AddPhotos" >
-              <Icon active={false} name="camera" />
+            <Button ref="Notification" onPress={this.props.callBackForNotificationButton} >
+              <Icon active={false} type="MaterialIcons" name="favorite-border" />
             </Button>
 
             <Button ref="profile" onPress={this.props.callBackForProfileButton}>
