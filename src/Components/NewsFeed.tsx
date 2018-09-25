@@ -5,14 +5,15 @@ import { Container, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left
 import Comments from './Comments';
 import Likes from './Likes';
 
-import Stories from './Stories';
+import Stories, { StoryObjectType } from './Stories';
 
 
 
 
 
 export interface Props {
-    data: Array<ObjProps>
+    data: Array<ObjProps>,
+    dataForStory:Array<StoryObjectType>
 }
 interface CommentProps {
     Comment: string;
@@ -191,35 +192,7 @@ export default class CardImageExample extends Component<Props, State> {
             <Container>
 
                 <Content>
-                    <Stories stories={[{
-                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
-                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
-
-                    }, {
-                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
-                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
-
-                    }, {
-                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
-                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
-
-                    }, {
-                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
-                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
-
-                    }, {
-                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
-                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
-
-                    }, {
-                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
-                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
-
-                    }, {
-                        image: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image",
-                        restImages: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKpWe4oP_CVOnRTTg_CTAUwox18qz8ffjLH_YvFnp7C-U8doWw", "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"]
-
-                    }]} />
+                  <Stories stories={this.props.dataForStory}/>
 
 
                     {newsFeed}

@@ -1,48 +1,52 @@
 import React from 'react';
-import { Thumbnail, Row, Grid, Col, Button } from 'native-base';
+import { Thumbnail, Row, Grid, Col, Button, List, ListItem, Text } from 'native-base';
 import { StyleSheet } from 'react-native';
 
-interface ObjectType {
-    image: string,
-    restImages: Array<string>
+export interface StoryObjectType {
+    Name: string;
+    Stories: Array<string>;
+    Time: number;
 }
 
-interface SearchBarProps {
-    stories: Array<ObjectType>
+export interface StoryProps {
+    stories: Array<StoryObjectType>
 
 }
-const StoryViewer = (e:any) => {
- console.log(e,"Pressed")
+const StoryViewer = (e: any) => {
+    console.log(e, "Pressed")
 }
-const Stories: React.SFC<SearchBarProps> = (props: SearchBarProps) => {
-const styles=StyleSheet.create({
-    paddingFromTop:{
-        paddingTop:"5%" ,
-        paddingBottom: "5%",
-    
+const Styles = StyleSheet.create({
+    padding: {
+        paddingLeft: "-5%",
     }
 })
-    let storyThumb = props.stories.map((ele,ind) => {
+const Stories: React.SFC<StoryProps> = (props: StoryProps) => {
+    const styles = StyleSheet.create({
+        paddingFromTop: {
+            paddingTop: "5%",
+            paddingBottom: "5%",
+            paddingLeft: "5%"
 
-        return(
-            <Col key={ind} style={styles.paddingFromTop}>
-            <Button  transparent onPress={(event)=>StoryViewer(event)}>
-                <Thumbnail  source={{ uri: ele.image }} />
-                
-            </Button>
+        }
+    })
+    let StoryData = props.stories.map((ele, ind) => {
+        return (
+            <ListItem style={Styles.padding} key={ind}>
+                <Thumbnail source={{ uri: ele.Stories[0] }} />
+                <Text>{ele.Name}</Text>
+            </ListItem>
 
-        </Col>
         )
- 
+
 
     })
-    console.log(props.stories[0].image)
+
+
+
     return (
-        <Grid>
-            <Row>
-                {storyThumb}
-            </Row>
-        </Grid>
+        <List horizontal={true}>
+            {StoryData}
+        </List>
 
     )
 }

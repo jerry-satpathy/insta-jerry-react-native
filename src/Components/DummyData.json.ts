@@ -1,4 +1,40 @@
 export default {
+
+    "StoriesForThisProfile": [
+        {
+            "Name": "Jerry Satpathy",
+            "Stories": ["https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&h=350", "http://wall2born.com/data/out/429/image-43482213-free-background-for-desktop.jpg", "https://images.unsplash.com/photo-1507830075634-ce51e8b19328?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1c87f7939c25a0ef26b2aa449b2aa380&w=1000&q=80"],
+            "Time": 13,
+
+        },
+        {
+            "Name": "QwertyBoy",
+            "Stories": ["https://www.setaswall.com/wp-content/uploads/2017/06/River-Wallpapers-43-2560-x-1440-340x220.jpg", "http://sim04.in.com/4fc598f2c9f2c0cdc5e0decc188d8d10_ft_t.jpg"],
+            "Time": 21
+        },
+        {
+            "Name": "QwertyBoy",
+            "Stories": ["https://www.setaswall.com/wp-content/uploads/2017/06/River-Wallpapers-43-2560-x-1440-340x220.jpg", "http://sim04.in.com/4fc598f2c9f2c0cdc5e0decc188d8d10_ft_t.jpg"],
+            "Time": 21
+        },
+        {
+            "Name": "Jerry Satpathy",
+            "Stories": ["https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&h=350", "http://wall2born.com/data/out/429/image-43482213-free-background-for-desktop.jpg", "https://images.unsplash.com/photo-1507830075634-ce51e8b19328?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1c87f7939c25a0ef26b2aa449b2aa380&w=1000&q=80"],
+            "Time": 13,
+
+        }, {
+            "Name": "QwertyBoy",
+            "Stories": ["https://www.setaswall.com/wp-content/uploads/2017/06/River-Wallpapers-43-2560-x-1440-340x220.jpg", "http://sim04.in.com/4fc598f2c9f2c0cdc5e0decc188d8d10_ft_t.jpg"],
+            "Time": 21
+        },
+        {
+            "Name": "Jerry Satpathy",
+            "Stories": ["https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&h=350", "http://wall2born.com/data/out/429/image-43482213-free-background-for-desktop.jpg", "https://images.unsplash.com/photo-1507830075634-ce51e8b19328?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1c87f7939c25a0ef26b2aa449b2aa380&w=1000&q=80"],
+            "Time": 13,
+
+        }
+
+    ],
     "CardData": [
         {
             "Name": "Jerry Satpathy",

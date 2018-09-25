@@ -38,12 +38,22 @@ export default class SearchBar extends Component<SearchProps, State> {
         this.setState({ term: term });
         let fuse = new Fuse(this.props.data, Options);
         let resultsFromSearch = fuse.search(this.state.term);
-        this.setState({ componentToRender: this.createComponentsToRender(resultsFromSearch) });
 
+        this.setState({ componentToRender: this.createComponentsToRender(resultsFromSearch) });
+        if (term === "" || term === null || term === undefined || term.length === 0|| term===" ") {
+            this.setState({ componentToRender: null })
+        }
 
 
     }
     createComponentsToRender(results: Array<DataForSearch>) {
+        if (results.length === 0) {
+            return (
+                <Text>
+                    No Results Found
+                </Text>
+            )
+        }
         return results.map((ele, ind) => {
             return <ListItem key={ind} thumbnail={true}>
                 <Left>

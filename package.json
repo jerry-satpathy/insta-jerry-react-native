@@ -43,6 +43,7 @@
     "@types/react-test-renderer": "^16.0.2",
     "concurrently": "^4.0.1",
     "expo": "^27.0.1",
+    "expo-pixi": "^0.3.1",
     "fs": "0.0.1-security",
     "fuse.js": "^3.2.1",
     "native-base": "^2.8.0",

@@ -13,7 +13,7 @@ interface state {
 }
 
 //Fix The Type Of compoennt to Render
-let componentToRender: any =<Card data={DummyData.CardData}/>;
+let componentToRender: any =<Card dataForStory={DummyData.StoriesForThisProfile} data={DummyData.CardData}/>;
 
 export default class App extends React.Component<{}, state>{
   constructor(props: any) {
@@ -61,7 +61,7 @@ export default class App extends React.Component<{}, state>{
     this.setState({ WhichComponent: "home" });
 
     componentToRender = <Card
-      data={DummyData.CardData} />;
+     dataForStory={DummyData.StoriesForThisProfile} data={DummyData.CardData} />;
 
   }
 
