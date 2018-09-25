@@ -4,7 +4,7 @@ export default {
         {
             "ID": 1,
             "Name": "Jerry Satpathy",
-            "Stories": ["https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&h=350", "http://wall2born.com/data/out/429/image-43482213-free-background-for-desktop.jpg", "https://images.unsplash.com/photo-1507830075634-ce51e8b19328?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1c87f7939c25a0ef26b2aa449b2aa380&w=1000&q=80"],
+            "Stories": ["https://image.shutterstock.com/image-photo/spring-blossom-background-beautiful-nature-260nw-1033292395.jpg","https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&h=350", "http://wall2born.com/data/out/429/image-43482213-free-background-for-desktop.jpg", "https://www.pixelstalk.net/wp-content/uploads/2016/10/Nature-love-images-hd.jpg"],
             "Time": 13,
 
         },

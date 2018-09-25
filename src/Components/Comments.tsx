@@ -1,57 +1,48 @@
-//To DO Make Comments Work
+import React, { Component } from 'react';
+import { Left, Text, Container, Body, Content, ListItem, List, Header } from 'native-base';
+export default interface PropsToPass {
 
-
-import React from 'react';
-
-import { List, ListItem, Thumbnail, Left, Text, Right, Body, Container, Content, Header } from 'native-base'
-import { StyleSheet } from 'react-native';
-
-export interface Props {
-  data: Array<CommentProps>;
-  callBack: (props: boolean) => void;
+}
+interface CommentPropsDescriptor {
+  Comment: string;
+  CommentTime: number;
+  ProfileWhichCommented: string;
+  Replies: string;
+}
+interface state {
+  showComments: boolean
+}
+export interface CommentProps {
+  data: Array<CommentPropsDescriptor>;
+  callBack: (bool: boolean) => void;
   showComments: boolean;
 
 }
 
-interface CommentProps {
-  CommentTime: number
-  ProfileWhichCommented: string;
-  Replies: string;
-  Comment: string;
-
-}
-interface State {
-  displayComments: boolean;
-  commentProps: Array<any>
-}
-
-class ListOfComments extends React.Component<Props, State>{
-  constructor(props: Props) {
+export default class Comment extends Component<CommentProps, state>{
+  constructor(props: CommentProps) {
     super(props);
     this.state = {
-      displayComments: false,
-      commentProps: []
+      showComments: this.props.showComments
     }
-    this.showComments = this.showComments.bind(this)
-  }
-  showComments() {
-    this.setState({ displayComments: true })
-    this.props.callBack(true);
+    this.ShowComments = this.ShowComments.bind(this)
 
+  }
+  ShowComments() {
+    this.props.callBack(true);
+    this.setState({ showComments: true })
   }
   render() {
-
-    if (this.props.data.length === 1 && this.state.displayComments === false) {
+    if (this.props.data.length === 1 && this.state.showComments === false) {
       return (
-        <Content>
+        <Container>
           <Left>
-            <Text>
-              {
-                this.props.data[0].ProfileWhichCommented
-              }
-
+            <Text onPress={this.ShowComments}>
+              {this.props.data[0].ProfileWhichCommented}
             </Text>
-
+            <Text suppressHighlighting={true}>
+              {this.props.data[0].CommentTime}
+            </Text>
           </Left>
           <Body>
             <Text>
@@ -60,59 +51,81 @@ class ListOfComments extends React.Component<Props, State>{
 
           </Body>
 
-        </Content>
-
+        </Container>
 
       )
     }
-    else if (this.props.data.length === 1) {
-      let itemToRender = this.props.data.map((ele, ind) => {
-
-        return (
-          <ListItem key={ind}>
-
-            <Body>
-              <Text>{ele.ProfileWhichCommented}</Text>
-              <Text note={true}>{ele.Comment}</Text>
-            </Body>
-            <Right>
-              <Text note={true}>{ele.CommentTime}</Text>
-            </Right>
-          </ListItem>
-        )
-      })
-   
+    else if (this.props.data.length > 1 && this.state.showComments === false) {
       return (
         <Container>
-          <Header>
-            <Text>
-              Viewing Comments
-            </Text>
-          </Header>
           <Content>
-            <List>
-
-              <Text onPress={this.showComments}>
-                {itemToRender}
-
-
-
+            <Left>
+              <Text onPress={this.ShowComments}>
+                {this.props.data[0].ProfileWhichCommented}
               </Text>
-            </List>
+              <Text suppressHighlighting={true}>
+                {this.props.data[0].CommentTime}
+              </Text>
+            </Left>
+            <Body>
+              <Text>
+                {this.props.data[0].Comment}
+              </Text>
+
+            </Body>
+          </Content>
+          <Content>
+            <Left>
+              <Text onPress={this.ShowComments}>
+                View All {this.props.data.length} comments
+              </Text>
+            </Left>
+
           </Content>
 
         </Container>
       )
     }
-    return (
-      "Hello"
-    )
+    if (this.state.showComments === true) {
+      let itemoRender = this.props.data.map(ele => {
+        return (
+          <ListItem thumbnail={true}>
+            <Left>
+              <Text>
+                {ele.ProfileWhichCommented}
+              </Text>
+            </Left>
+            <Body>
+              <Text>
+                {ele.Comment}
+              </Text>
+              <Text>
+                {ele.Replies}
+              </Text>
+            </Body>
+          </ListItem>
+        )
+      })
+      return (
+        <Container>
+          <Header>
+            <Text>
+              Viewing All Comments
+            </Text>
+          </Header>
+          <Body>
+            <List>
+              {itemoRender}
+            </List>
 
-  }
-  componentDidMount() {
-    console.log(this.props)
+
+
+          </Body>
+        </Container>
+
+      )
+    }
+
   }
 }
 
-
-export default ListOfComments;

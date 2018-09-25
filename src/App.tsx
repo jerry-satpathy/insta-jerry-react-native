@@ -43,7 +43,7 @@ export default class App extends React.Component<{}, state>{
         Story: ele.Stories
       }
     })
-
+this.setState({})
     data.forEach(ele => {
       if (ele.id === id) {
         console.log(index, ele.Story.length)
@@ -72,7 +72,7 @@ export default class App extends React.Component<{}, state>{
             index += 1
 
           }
-            , 2000)
+            , 4000)
 
         }
 

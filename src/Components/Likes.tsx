@@ -14,7 +14,7 @@ export interface LikeProps {
     showLike: boolean;
     callBack: (bool:boolean) => void
 }
-class LikesCount extends React.Component<LikeProps, State>{
+export default class LikesCount extends React.Component<LikeProps, State>{
     constructor(props: LikeProps) {
         super(props);
         this.state = {
@@ -71,9 +71,7 @@ class LikesCount extends React.Component<LikeProps, State>{
                 )
             })
           
-           this.props.data.forEach(ele=>{
-                console.log("These are the element "+ele.ProfilePic,ele.ProfileName)
-            })
+      
             return (
                 <Container>
                     <Header>
@@ -105,4 +103,3 @@ class LikesCount extends React.Component<LikeProps, State>{
 
 
 
-export default LikesCount;
