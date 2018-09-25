@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Grid, Thumbnail, Text, Button } from 'native-base';
-import { Image, StyleSheet, Dimensions, ScaledSize, ScrollView, } from 'react-native';
+import { Image, StyleSheet, ScrollView, } from 'react-native';
 export interface ProfileProps {
     data: ProfilePropsDescriptor
 }

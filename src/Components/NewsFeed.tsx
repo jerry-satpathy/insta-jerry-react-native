@@ -12,8 +12,9 @@ import Stories, { StoryObjectType } from './Stories';
 
 
 export interface Props {
-    data: Array<ObjProps>,
-    dataForStory:Array<StoryObjectType>
+    data: Array<ObjProps>;
+    callBackForStory: (id: any) => void
+    dataForStory: Array<StoryObjectType>;
 }
 interface CommentProps {
     Comment: string;
@@ -192,7 +193,7 @@ export default class CardImageExample extends Component<Props, State> {
             <Container>
 
                 <Content>
-                  <Stories stories={this.props.dataForStory}/>
+                    <Stories onClick={this.props.callBackForStory} stories={this.props.dataForStory} />
 
 
                     {newsFeed}
