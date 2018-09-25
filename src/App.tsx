@@ -4,7 +4,7 @@ import FooterWithButton from './Components/Footer'
 import { Container, Content, Footer, Header } from 'native-base';
 import Profile from './Components/profile';
 import AppHeader from './Components/Header';
-import Search from './Components/Search';
+import Search from './Components/SearchBar';
 
 import DummyData from './Components/DummyData.json';
 import Notification from './Components/Notification';
@@ -41,7 +41,7 @@ export default class App extends React.Component<{}, state>{
     this.setState({
       WhichComponent: "search"
     })
-    componentToRender = <Search />
+    componentToRender = <Search data={DummyData.AllTheProfiles} />
   }
   callBackForLikeButton(){
     this.setState({

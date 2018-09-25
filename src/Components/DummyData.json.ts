@@ -124,9 +124,40 @@ export default {
         ],
         "Name": "Jerry Satpathy",
         "ProfileDescription": "I am an Incepiton",
-        "ProfilePicture":"https://cdn.paolacasoli.com/wp-content/uploads/2010/09/dummies_man.gif",
-        "Followers":21,
-        "Following":40,
-        "ProfileLinkDescription":"jerrysatpathy.in"
-    }
+        "ProfilePicture": "https://cdn.paolacasoli.com/wp-content/uploads/2010/09/dummies_man.gif",
+        "Followers": 21,
+        "Following": 40,
+        "ProfileLinkDescription": "jerrysatpathy.in"
+    },
+    "AllTheProfiles": [
+        {
+            "ProfileID": 1,
+            "ProfileName": "Jerry Satpathy",
+            "ProfilePicture": "https://cdn.paolacasoli.com/wp-content/uploads/2010/09/dummies_man.gif"
+        },
+        {
+            "ProfileID": 2,
+            "ProfileName": "Shyam Nath",
+            "ProfilePicture": "http://www.islamedianalysis.info/wp-content/uploads/2016/03/2016_03_03-TerrorismForDummies-Header2970745526.png"
+        }, {
+            "ProfileID": 3,
+            "ProfileName": "Lara Dutta ",
+            "ProfilePicture": "https://cdn.paolacasoli.com/wp-content/uploads/2010/09/dummies_man.gif"
+        },
+        {
+            "ProfileID": 4,
+            "ProfileName": "Rammez Raza",
+            "ProfilePicture": "http://www.islamedianalysis.info/wp-content/uploads/2016/03/2016_03_03-TerrorismForDummies-Header2970745526.png"
+        }, {
+            "ProfileID": 5,
+            "ProfileName": "Wasim Akram",
+            "ProfilePicture": "https://cdn.paolacasoli.com/wp-content/uploads/2010/09/dummies_man.gif"
+        },
+        {
+            "ProfileID": 6,
+            "ProfileName": "Narendra Modi",
+            "ProfilePicture": "http://www.islamedianalysis.info/wp-content/uploads/2016/03/2016_03_03-TerrorismForDummies-Header2970745526.png"
+        },
+
+    ]
 }

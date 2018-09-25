@@ -58,7 +58,7 @@ export default class FooterTabsIconExample extends Component<Props, State>{
             </Button>
 
             <Button ref="profile" onPress={this.props.callBackForProfileButton}>
-              <Icon active={false} name="person" />
+              <Icon active={false} name="person-outline" type="MaterialIcons" />
             </Button>
           </FooterTab>
         </Footer>

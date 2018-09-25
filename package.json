@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^6.3.1",
+    "@types/algoliasearch": "^3.27.7",
     "@types/expo": "^27.0.9",
     "@types/jest": "^23.3.2",
     "@types/react-native-snap-carousel": "^3.7.1",
@@ -43,6 +44,7 @@
     "concurrently": "^4.0.1",
     "expo": "^27.0.1",
     "fs": "0.0.1-security",
+    "fuse.js": "^3.2.1",
     "native-base": "^2.8.0",
     "react": "16.3.1",
     "react-native": "~0.55.2",

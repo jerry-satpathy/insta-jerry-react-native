@@ -96,7 +96,7 @@ const Profile: React.SFC<ProfileProps> = (props: ProfileProps) => {
                         </Col>
 
 
-                   
+                    
 
 
 
