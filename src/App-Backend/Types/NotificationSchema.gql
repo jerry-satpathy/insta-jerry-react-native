@@ -1,0 +1,17 @@
+interface NotificaitonDescription{
+    ProfileName:String;
+    ProfilePicture:String;
+
+}
+
+type NotificationData{
+    NotificationID:String;
+    ArrayOfNotificaitons:[NotificaitonDescription];
+    NotificaitonCategory:String;
+    Picture:String;
+    Time:Int;
+    Date:String;
+}
+extends type Query{
+    NotificationToRender:[NotificationData]
+}

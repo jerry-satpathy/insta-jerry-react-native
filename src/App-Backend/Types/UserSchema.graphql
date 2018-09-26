@@ -1,0 +1,29 @@
+
+type UserProfileData{
+
+ data:{
+     ProfileName:String;
+Followers:Number;
+Following:Numnber;
+
+ProfileLinkDescription:String;
+PhotosOfTheProfile:[String];
+ProfileDescription:String;
+ } 
+
+
+
+
+}
+extends type Query{
+profileData:UserProfileData
+}
+extends type Mutation{
+    editUserName(name:string!):UserProfileData;
+    editUserLink(link:string):UserProfileData;
+    editUserProfilePicture(link:srting):UserProfileData;
+    removePictureFromDataBase(id:String):UserProfileData;
+    editUserDescription(Desc:String):UserProfileData;
+    
+}
+

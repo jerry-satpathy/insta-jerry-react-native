@@ -1,0 +1,11 @@
+interface DataForProfile{
+    ProfileID:Int;
+    ProfileName:String;
+    ProfilePicture:String
+}
+type ProfileData{
+    AllTheProfiles:[DataForProfile]
+}
+extends type Query{
+    ProfileDataToSearch:[AllTheProfiles]
+}

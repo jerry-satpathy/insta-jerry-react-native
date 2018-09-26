@@ -1,0 +1,30 @@
+interface CommentData{
+        Comment:String;
+        CommentTime:Int;
+        ProfileWhichCommented:String;
+        Replies:String
+
+}
+interface LikeData{
+    ProfileName:String;
+    ProfilePic:String;
+
+}
+type CardData{
+    Name:String;
+    ThumbURL:String;
+    TotalLike:Int;
+    TotalComments:Int;
+    FeedDesc:String;
+    AllComments:[CommentData];
+    AllLikes:[LikeData];
+    TimeData:Int;
+    Location:String;
+    PictureForFeed:String;
+
+
+}
+extends type Query{
+    NewsFeedData:[CardData];
+
+}

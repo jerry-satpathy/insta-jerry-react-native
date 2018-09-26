@@ -1,0 +1,10 @@
+interface StoryData{
+    ID:Int;
+    Name:String;
+    Stories:[String];
+    Time:Int;
+}
+type Stories{
+StoryData:[StoryData];
+
+}
