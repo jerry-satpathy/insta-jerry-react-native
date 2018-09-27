@@ -1,0 +1,69 @@
+type User{
+  id: UUID! @unique 
+  name: String @unique @default(value:"")
+  profilePicture:String @default(value:"")
+  Followers:Int@default(value:0)
+  Following:Int@default(value:0)
+  Links:String @default(value:"")
+  Bio:String @default(value:"")
+  PhotosOfTheProfile:PictureData 
+  createdAt:DateTime! @default(value:"2018-01-26T06:16:12.123Z")
+  updatedAt:DateTime! @default(value:"2018-01-26T06:16:12.123Z")
+
+}
+type PictureData{
+  picture:String!
+  id:ID! @unique
+}
+type CommentData{
+        Comment:String!
+        CommentTime:DateTime!
+        ProfileWhichCommented:String!
+        Replies:String!
+
+}
+
+type LikeData{
+    ProfileName:String!
+    ProfilePic:String!
+
+}
+type CardData {
+    id:ID! @unique
+    Name:String!
+    ThumbURL:String!
+    TotalLike:Int @default(value: 0)
+    TotalComments:Int @default(value: 0)
+    FeedDesc:String!
+    AllComments:[CommentData!]! 
+    AllLikes:[LikeData!]! 
+    TimeData:DateTime!
+    Location:String!
+    PictureForFeed:String!
+
+
+}
+type NotificaitonDescription{
+    ProfileName:String!
+    ProfilePicture:String!
+
+}
+
+type NotificationData{
+    id:ID! @unique
+    ArrayOfNotificaitons:NotificaitonDescription
+    NotificaitonCategory:String!
+    Picture:String!
+    Time:DateTime! #The Time for the notification i.e The Notification updated now So mutation would always require the updated time
+    Date:DateTime!  #The Date for which the notfication is viewed 
+}
+
+type StoryData{
+  id:ID! @unique
+nameOfTheStoryProvider:String! @unique 
+Story:[String!]
+time:DateTime!
+
+}
+
+

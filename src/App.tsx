@@ -1,14 +1,26 @@
 import React from 'react';
+import { Dimensions, ImageBackground } from 'react-native';
+import {
+  Container,
+  Content,
+  Footer,
+  Header,
+  Left,
+  Right,
+  Body,
+  Button,
+  Title,
+  Icon,
+  Text
+} from 'native-base';
+import { prisma } from './Server/Schema/generated/prisma'
 import Card from './Components/NewsFeed';
 import FooterWithButton from './Components/Footer'
-import { Container, Content, Footer, Header, Left, Right, Body, Button, Title, Icon, Text } from 'native-base';
 import Profile from './Components/profile';
-
 import Search from './Components/SearchBar';
-
 import DummyData from './Components/DummyData.json';
 import Notification from './Components/Notification';
-import { StyleSheet, Image, Dimensions, ImageBackground } from 'react-native';
+
 interface state {
   WhichComponent: string;
   ComponentToRender: any
@@ -43,10 +55,10 @@ export default class App extends React.Component<{}, state>{
         Story: ele.Stories
       }
     })
-this.setState({})
+    this.setState({})
     data.forEach(ele => {
       if (ele.id === id) {
-        console.log(index, ele.Story.length)
+
 
         if (index < ele.Story.length) {
           let interval = setInterval(() => {
@@ -56,56 +68,42 @@ this.setState({})
               this.setState({
                 ComponentToRender: <Card callBackForStory={this.callBackForStories} dataForStory={DummyData.StoriesForThisProfile} data={DummyData.CardData} />
               })
-            }
-            if (index < ele.Story.length) {
+            } else (index < ele.Story.length) {
               this.setState({
-
                 ComponentToRender: <ImageBackground source={{ uri: ele.Story[index] }} style={{ width: width, height: height }}>
                   <Text>Inside</Text>
                 </ImageBackground>
-
-
               })
             }
-
-
             index += 1
-
-          }
-            , 4000)
-
+          }, 4000)
         }
-
-
       }
-
     })
 
   }
+
   callBackForHeader(e: any) {
     console.log(e)
   }
-  callBackForFooterProfileButton() {
 
+  callBackForFooterProfileButton() {
     this.setState({
       WhichComponent: "person",
       ComponentToRender: <Profile data={DummyData.profileData} />
     });
-
-
   }
+
   callBackForFooterSearchButton() {
     this.setState({
       WhichComponent: "search",
       ComponentToRender: <Search data={DummyData.AllTheProfiles} />
     })
-
   }
   callBackForLikeButton() {
     this.setState({
       WhichComponent: "likes"
     })
-
   }
   callBackForFooterNottificationButton() {
     this.setState({
@@ -153,9 +151,6 @@ this.setState({})
           </Right>
         </Header>
 
-
-
-
         <Content >
           {this.state.ComponentToRender}
         </Content>
@@ -170,7 +165,21 @@ this.setState({})
   }
   componentDidMount() {
     this.setState({ ComponentToRender: <Card callBackForStory={this.callBackForStories} dataForStory={DummyData.StoriesForThisProfile} data={DummyData.CardData} /> })
+
+    prisma.createUser({
+      name: "Jerry Satpathy",
+      Followers: 21,
+      Following: 10,
+      Links: "JerrySatpathy.in",
+      Bio: "I am an Inception ",
+
+    }
+
+
+
+    )
   }
+
   componentWillUpdate() {
     //console.log(this.state.WhichComponent)
     //console.log(componentToRender);
